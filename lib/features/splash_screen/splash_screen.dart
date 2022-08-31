@@ -1,9 +1,9 @@
 import 'dart:async';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:technical_test_logient/utils/colors.dart' as colors;
 import 'package:flutter/material.dart';
-import 'package:technical_test_logient/features/shift_offerts/screens/shift_offerts_screen.dart';
+import 'package:technical_test_logient/features/offered_shift/offered_shift_screen.dart';
 import 'package:technical_test_logient/widgets/custom_navigation/slide_left_route.dart';
-
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -11,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   Future<Timer> startTimer() async {
     return Timer(const Duration(milliseconds: 2500), onDoneLoading);
   }
@@ -30,7 +29,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      backgroundColor: colors.lightGreen,
+      body: const Center(
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 50.0,
+        ),
+      ),
     );
   }
 }
